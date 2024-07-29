@@ -21,7 +21,7 @@ const navigation: { label: string; link: string }[] = [
 const Header = () => {
   return (
     <>
-      <nav className="bg-violet-900 py-2 ">
+      <nav className="bg-violet-900 py-2 w-full">
         <div className="container mx-auto grid grid-cols-3 grid-rows-1 justify-center items-center">
           <Link href={"/"} className="text-white text-4xl flex font-bold  ">
             <svg
