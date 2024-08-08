@@ -20,13 +20,13 @@ const navigation: { label: string; link: string }[] = [
 
 const Header = () => {
   return (
-    <>
+    <header className="w-full">
       <nav className="bg-violet-900 py-2 w-full">
         <div className="container mx-auto grid grid-cols-3 grid-rows-1 justify-center items-center">
           <Link href={"/"} className="text-white text-4xl flex font-bold  ">
             <svg
               width="250"
-              height="90"
+              height="70"
               viewBox="0 0 342 107"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ const Header = () => {
               </defs>
             </svg>
           </Link>
-          <div className="flex justify-center items-center space-x-2 mt-3">
+          <div className="flex justify-center items-center space-x-2 mt-2">
             {navigation.map((data, index) => (
               <Button
                 key={index}
@@ -100,8 +100,12 @@ const Header = () => {
           </div>
         </div>
       </nav>
-    </>
+    </header>
   );
 };
 
 export default Header;
+
+
+
+
