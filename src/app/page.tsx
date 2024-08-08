@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col relative w-screen h-screen ">
-      {/* <section className="self-end w-full h-screen m-auto absolute z-[-1] object-cover flex mt-10">
+    <div className="flex flex-col relative w-full h-screen no-scrollbar">
+      <section className="self-end w-full h-screen m-auto absolute z-[-1] object-cover flex mt-10">
         <Image
           src={"/hero/hero.jpg"}
           alt=""
@@ -25,10 +25,10 @@ export default function Home() {
           className="object-cover w-[50%]"
         />
       </section>
-      <Header /> */}
+      <Header />
       <section className="container">
       
-        <div className="mt-20 w-full max-w-8xl py-16 text-white ">
+        <div className="my-auto w-full max-w-8xl py-16 text-white ">
           
           <div className="grid items-center gap-20 sm:gap-8 lg:grid-cols-2 ">
             <div>
