@@ -3,9 +3,9 @@ import { ImLocation } from "react-icons/im";
 
 const Footer = () => {
     return (
-      <>
+      
 
-<footer className="block bg-violet-700 text-white">
+<footer className="block bg-violet-700 text-white w-full">
       <div className="py-16 md:py-20 mx-auto w-full max-w-7xl px-5 md:px-10">
        
         <div className="sm:flex-row flex justify-between flex-col">
@@ -36,7 +36,7 @@ const Footer = () => {
       </div>
     </footer>
         
-        </>
+      
     );
 }
 
