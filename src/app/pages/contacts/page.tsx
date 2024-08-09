@@ -10,108 +10,84 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import Header from "@/components/elements/header";
+import Footer from "@/components/elements/footer";
 
 const contacts = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
 
   return (
-      <div className="w-full py-20 lg:py-40">
+    <>
+    <Header/>
+      <div className="w-full py-20 text-black bg-violet-100">
       <div className="container max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-2 gap-10">
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-4">
               <div>
-                <Badge>Contact</Badge>
+                <Badge>Contact Us</Badge>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-left font-regular">
-                  Something new
+                <h4 className="text-4xl max-w-xl text-left font-bold">
+                  Join FitLife Today
                 </h4>
-                <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-sm text-left">
-                  Managing a small business today is already tough. Avoid
-                  further complications by ditching outdated, tedious trade
-                  methods.
+                <p className="text-md leading-relaxed max-w-sm text-left">
+                Your journey to a healthier, stronger you starts here! Have questions or need assistance? Our team is here to help. Reach out to us via phone, email, or visit our location for personalized support.
                 </p>
               </div>
             </div>
             <div className="flex flex-row gap-6 items-start text-left">
                 <Check className="w-4 h-4 mt-2 text-primary" />
               <div className="flex flex-col gap-1">
-                <p>Easy to use</p>
-                <p className="text-muted-foreground text-sm">
-                  We&apos;ve made it easy to use and understand.
+                <p>State-of-the-Art Equipment</p>
+                <p className="text-muted-foreground text-sm wrap-">
+                Train with cutting-edge machines for optimal results.
                 </p>
               </div>
             </div>
             <div className="flex flex-row gap-6 items-start text-left">
                 <Check className="w-4 h-4 mt-2 text-primary" />
               <div className="flex flex-col gap-1">
-                <p>Fast and reliable</p>
+                <p>Personalized Training Plans</p>
                 <p className="text-muted-foreground text-sm">
-                  We&apos;ve made it easy to use and understand.
+                Get custom plans tailored to your goals.
                 </p>
               </div>
             </div>
             <div className="flex flex-row gap-6 items-start text-left">
                 <Check className="w-4 h-4 mt-2 text-primary" />
               <div className="flex flex-col gap-1">
-                <p>Beautiful and modern</p>
+                <p>Supportive Community Environment</p>
                 <p className="text-muted-foreground text-sm">
-                  We&apos;ve made it easy to use and understand.
+                Be part of a motivating and welcoming community.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="justify-center flex items-center">
-            <div className="rounded-md max-w-sm flex flex-col border p-8 gap-4">
-              <p>Book a meeting</p>
-              <div className="grid w-full max-w-sm items-center gap-1">
-                <Label htmlFor="picture">Date</Label>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <Button
-                      variant={"outline"}
-                      className={cn(
-                        "w-full max-w-sm justify-start text-left font-normal",
-                        !date && "text-muted-foreground"
-                      )}
-                    >
-                      <CalendarIcon className="mr-2 h-4 w-4" />
-                      {date ? format(date, "PPP") : <span>Pick a date</span>}
-                    </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0">
-                    <Calendar
-                      mode="single"
-                      selected={date}
-                      onSelect={setDate}
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
+          <div className="justify-center items-center place-content-center w-full mt-8">
+            <div className="rounded-md max-w-lg flex flex-col bg-violet-800 p-7 gap-4 text-white">
+              <p className="text-lg font-bold">Book an Inquiry</p>
+              <div className="grid w-full max-w-lg items-center gap-1">
+                <Label htmlFor="Full Name">Full Name</Label>
+                <Input id="fullname" type="text" />
               </div>
-              <div className="grid w-full max-w-sm items-center gap-1">
-                <Label htmlFor="firstname">First name</Label>
-                <Input id="firstname" type="text" />
+              <div className="grid w-full max-w-lg items-center gap-1">
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" type="email" />
               </div>
-              <div className="grid w-full max-w-sm items-center gap-1">
-                <Label htmlFor="lastname">Last name</Label>
-                <Input id="lastname" type="text" />
+              <div className="grid w-full max-w-lg items-center gap-1">
+                <Label htmlFor="message">Message</Label>
+                <Input id="message" type="textarea" />
               </div>
-              <div className="grid w-full max-w-sm items-center gap-1">
-                <Label htmlFor="picture">Upload resume</Label>
-                <Input id="picture" type="file" />
-              </div>
-
-              <Button className="gap-4 w-full">
-                Book the meeting <MoveRight className="w-4 h-4" />
+              <Button className="bg-violet-500 gap-4 w-full hover:text-violet-300 font-semibold duration-200">
+                Book the Inquiry <MoveRight className="w-4 h-4" />
               </Button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div><Footer/></>
   );
 };
 export default contacts;
